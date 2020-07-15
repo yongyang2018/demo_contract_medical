@@ -1,0 +1,134 @@
+*{margin: 0;padding: 0;}
+html,body {
+	height: 100%;
+}
+body{
+	background-image: url(/assets/img/cure-beijing.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.select-cure-title{
+	font-size: 26px;
+	margin: 50px 0;
+	font-weight: bold;
+}
+.select-cure-menu{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.select-cure-menu .select-cure-item{
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+	border-radius: 50%;
+	box-shadow: 4px 4px 10px 4px rgba(4,0,0,0.25);
+}
+.select-cure-mid {
+	height: 2px;
+	width: 200px;
+	background-color: #FFFFFF;
+	box-shadow: 0px 4px 10px 3px rgba(4,0,0,0.25);
+}
+.select-cure-kv{
+	width: 100%;
+	font-size: 24px;
+	color:#333333;
+	display: flex;
+	flex-direction: column;
+	margin-top: 40px;
+	font-weight: 400;
+}
+.logistics-item,.select-cure-info{
+	display: flex;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-left: 150px;
+}
+.logistics-item>span:nth-child(2),.select-cure-info>span:nth-child(2){
+	margin-left: 30px;
+}
+.select-cure-block{
+	display: flex;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	padding-left: 150px;
+}
+
+.select-cure-info{
+	padding: 0 15%;
+}
+.select-cure-info>span:first-child{
+	margin-right: 10px;
+}
+.select-cure-info>span:nth-child(2){
+	margin-left: 0px;
+}
+.span-flex{
+	flex: 1;
+}
+.wid-1200{
+	text-align: left;
+}
+.select-cure-title{
+	text-align: center;
+}
+.countersign{
+	display: flex;
+	height: 26px;
+	align-items: center;
+	margin-left: 13%;
+	margin-bottom: 10px;
+}
+.countersign-true{
+	width: 15px;
+	height: 15px;
+	background-color: #333333;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+.countersign-false{
+	width: 15px;
+	height: 15px;
+	background-color: #FFFFFF;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.box-hospital{
+	height: 320px;
+	width: 720px;
+	border: 5px solid rgb(255, 255, 255);
+	margin: 30px auto;
+	box-shadow: 5px 5px 10px 5px rgba(4,0,0,0.25);
+	display: flex;
+	align-items: center;
+	padding-left: 100px;
+}
+.box-hospital>img{
+	width: 240px;
+	height: 240px;
+	margin-right: 50px;
+}
+.box-hospital>a{
+	font-size: 60px;
+	text-decoration:none;
+	color: #000000;
+	width: 240px;
+}
+.box-hospital>a:hover{
+	background: #88CDF8;
+}
+.hash_font{
+	font-size: 23px;
+}
+.select-cure-info_hash{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-left: 150px;
+	display: flow-root;
+}

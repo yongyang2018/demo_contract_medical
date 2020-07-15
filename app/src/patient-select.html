@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>医疗查询</title>
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<script src="jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="/assets/css/safe.css"/>
+		<link rel="stylesheet" type="text/css" href="/assets/css/header.css"/>
+		<link rel="stylesheet" type="text/css" href="/assets/css/select.css"/>
+		<script src="index.js"></script>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div class="safe-conent">
+			<div class="top_right">
+				<a><img src="/assets/img/set.png"></a>
+			</div>
+		
+			<div class="safe-item">
+
+				<div class="safe-title">
+					以太坊医疗查询网站
+				</div>
+				<div class="safe-slogan">
+					<!-- 宣传标语宣传标语宣传标语宣传标语宣传标语宣传标语宣传标语宣传标语宣传标。 -->
+				</div>
+				<div class="safe-wrap">
+					<input type="text" placeholder="请输入正确的查询号" id="txt"/>
+					<div class="safe-wrap-img" id="safe-search">
+						<img src="/assets/img/addressee-search.png">
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+
+		<script type="text/javascript">
+			$("#header").load("header.html");
+			window.onload = function() {
+				document.getElementById("safe-search").onclick = function() {
+					confirm();
+				}
+			}
+			function confirm(){
+				var txt = document.getElementById("txt");//input的id
+				if(txt.value ==""|| txt.value == undefined || txt.value == null){
+					alert("请输入查询号")
+					return;	
+				}
+				App.search(GetRequest().type,txt.value);
+			}
+			function GetRequest() {
+				var url = location.search; //获取url中"?"符后的字串
+				var theRequest = new Object();
+				if (url.indexOf("?") != -1) {
+					var str = url.substr(1);
+					strs = str.split("&");
+					for(var i = 0; i < strs.length; i ++) {
+						theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+					}
+				}
+				return theRequest;
+			}
+		</script>
+	</body>
+</html>

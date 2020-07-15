@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>医院</title>
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<script src="jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="/assets/font-awesome-4.7.0/css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="/assets/css/header.css"/>
+		<link rel="stylesheet" type="text/css" href="/assets/css/select.css"/>
+		<script src="index.js"></script>
+	</head>
+	<body>
+		<div id="header"></div>
+
+		<div id="" class="wid-1200">
+			<div class="">
+				<div class="outer">
+					<div class="box-hospital">
+						<img src="/assets/img/cure-chaxun.png" >
+						<a id="patient_select">查询病人</a>
+					</div>
+					<div class="box-hospital">
+						<img src="/assets/img/cure-shanglian.png" >
+						<a id="chain" style="letter-spacing: 20px;text-align: center;">上链</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$("#header").load("header.html");
+			window.onload = function() {
+				document.getElementById("patient_select").onclick = function() {
+					var url = "patient-select.html?type=1";
+      				window.location.href=url; 
+				}
+				document.getElementById("chain").onclick = function() {
+					App.to_chain();
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>病人</title>
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<script src="jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="/assets/font-awesome-4.7.0/css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="/assets/css/header.css"/>
+		<link rel="stylesheet" type="text/css" href="/assets/css/user.css"/>
+		<script src="index.js"></script>
+	</head>
+	<body>
+		<div id="header"></div>
+
+		<div id="" class="wid-1200">
+			<div class="">
+				<div class="outer">
+					<div class="box-user">
+						<div class="user-hospital">
+							A医院
+						</div>
+						<div class="user-info">
+							<div class="user-title">就诊信息</div>
+							<div class="user-kv">
+								<span>区块高度：</span>
+								<span><a id="A_height"></a></span>
+							</div>
+							<div class="user-kv">
+								<span>区块哈希：</span>
+								<span><a id="A_block_hash"></a></span>
+							</div>
+							<div class="user-kv">
+								<span>事务哈希：</span>
+								<span><a id="A_tx_hash"></a></span>
+							</div>
+						</div>
+							<div class="user-hospital">
+								<a style="font-size: 33px;margin-left: 30px;" id="A_info"></a>
+							</div>
+							<button type="button" id="A_cancel" style="display: none;">取消授权</button>
+							<button type="button" id="A_empower" style="display: none;">授权</button>
+					</div>
+					<div class="box-user">
+						<div class="user-hospital">
+							B医院
+						</div>
+						<div class="user-info">
+							<div class="user-title">就诊信息</div>
+							<div class="user-kv">
+								<span>区块高度：</span>
+								<span><a id="B_height"></a></span>
+							</div>
+							<div class="user-kv">
+								<span>区块哈希：</span>
+								<span><a id="B_block_hash"></a></span>
+							</div>
+							<div class="user-kv">
+								<span>事务哈希：</span>
+								<span><a id="B_tx_hash"></a></span>
+							</div>
+						</div>
+						<div class="user-hospital">
+							<a style="font-size: 33px;margin-left: 30px;" id="B_info"></a>
+						</div>
+						<button type="button" id="B_cancel" style="display: none;">取消授权</button>
+						<button type="button" id="B_empower" style="display: none;">授权</button>
+					</div>
+					<div class="box-user">
+						<div class="user-hospital">
+							C医院
+						</div>
+						<div class="user-info">
+							<div class="user-title">就诊信息</div>
+							<div class="user-kv">
+								<span>区块高度：</span>
+								<span><a id="C_height"></a></span>
+							</div>
+							<div class="user-kv">
+								<span>区块哈希：</span>
+								<span><a id="C_block_hash"></a></span>
+							</div>
+							<div class="user-kv">
+								<span>事务哈希：</span>
+								<span><a id="C_tx_hash"></a></span>
+							</div>
+						</div>
+						<div class="user-hospital">
+							<a style="font-size: 33px;margin-left: 30px;" id="C_info"></a>
+						</div>
+						<button type="button" id="C_cancel" style="display: none;">取消授权</button>
+						<button type="button" id="C_empower" style="display: none;">授权</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$("#header").load("header.html");
+			window.onload = function() {
+				App.user_info();
+				document.getElementById("A_cancel").onclick = function() {
+					App.update_A(1);
+				}
+				document.getElementById("A_empower").onclick = function() {
+					App.update_A(2);
+				}
+				document.getElementById("B_cancel").onclick = function() {
+					App.update_B(1);
+				}
+				document.getElementById("B_empower").onclick = function() {
+					App.update_B(2);
+				}
+				document.getElementById("C_cancel").onclick = function() {
+					App.update_C(1);
+				}
+				document.getElementById("C_empower").onclick = function() {
+					App.update_C(2);
+				}
+			}
+		</script>
+	</body>
+</html>

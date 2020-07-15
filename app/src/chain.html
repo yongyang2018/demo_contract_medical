@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>登记人</title>
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<script src="jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="/assets/font-awesome-4.7.0/css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="/assets/css/header.css" />
+		<link rel="stylesheet" type="text/css" href="/assets/css/chain.css" />
+		<link rel="stylesheet" href="/assets/css/flatpickr.css">
+		<script type="text/javascript" src="flatpickr.js"></script>
+		<script src="index.js"></script>
+	</head>
+	<body>
+		<div id="header"></div>
+
+		<div class="wid-1200">
+			<div class="">
+				<div class="outer">
+					<div class="box-frame">
+						<div class="chain-title">
+							病人上链信息填写
+						</div>
+						<div class="chain-kv">
+							<div class="chain-item">
+								<span class="">病人姓名</span>
+								<input type="text" id="name" required="required"/>
+							</div>
+							
+							<div class="chain-item">
+								<span class="">就诊时间</span>
+								<input type="text" id="time" required="required"/>
+							</div>
+							<div class="chain-item">
+								<span class="">就诊信息</span>
+								<input type="text" id="info" required="required"/>
+							</div>
+	
+						</div>
+						<div class="text-center">
+							<button class="box-but" onclick="confirm()">存证上链</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$("#header").load("header.html");
+		
+		function confirm(){
+			var name = document.getElementById("name").value.replace(/(^\s*)|(\s*$)/g, '');//姓名
+			var info = document.getElementById("info").value.replace(/(^\s*)|(\s*$)/g, '');//信息
+			var time = document.getElementById("time").value;//时间
+			
+			if(name ==""|| name == undefined || name == null){
+				alert("请输入病人姓名")
+				return;
+			}
+			if (time ==""||time == undefined || time == null) {
+				alert("请输入就诊时间")
+				return;
+			}
+			if (info ==""||info == undefined || info == null) {
+				alert("就诊信息")
+				return;
+			}
+			App.save(name,time,info);
+		}
+			var today = new Date();
+			var month = today.getMonth() + 1;
+			month = month < 10 ? '0'+month : month;
+			var day = today.getDate() < 10 ? '0'+today.getDate() : today.getDate();
+			var now = today.getFullYear() + '/' + month + '/' + day;
+			$("#time").flatpickr({         //初始化插件
+				maxDate: now      //最大日期
+			});	
+		</script>
+		
+	</body>
+</html>

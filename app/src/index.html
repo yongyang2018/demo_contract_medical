@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>医疗首页</title>
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<link rel="stylesheet" type="text/css" href="/assets/css/home.css" />
+		<script src="index.js"></script>
+	</head>
+	<body>
+		<div class="home-box">
+			<ul class="section-ui">
+				
+				<li>
+					<div class="li-div-title">
+						<img src="/assets/img/cure-yiyuan.png" >
+						<a class="item-title" href="hospital.html">医院A</a>
+					</div>
+				</li>
+
+				<li>
+					<div class="li-div-title">
+						<img src="/assets/img/cure-yiyuan.png" >
+						<a class="item-title" id="hospital_B">医院B</a>
+					</div>
+				</li>
+
+				<li>
+					<div class="li-div-title">
+						<img src="/assets/img/cure-yiyuan.png" >
+						<a class="item-title" id="hospital_C">医院C</a>
+					</div>
+				</li>
+				<li>
+					<div class="li-div-title">
+						<img src="/assets/img/cure-bingren.png"/>
+						<a class="item-title" id="patient">病人</a>
+					</div>
+				</li>
+
+			</ul>
+			<div class="paompt">
+				<div class="paompt-item">
+					<span>医院A：</span>
+					<span><a id="address_A"></a></span>
+				</div>
+				<div class="paompt-item">
+					<span>医院B：</span>
+					<span><a id="address_B"></a></span>
+				</div>
+				<div class="paompt-item">
+					<span>医院C：</span>
+					<span><a id="address_C"></a></span>
+				</div>
+				<div class="paompt-item">
+					<span>病人：</span>
+					<span><a id="address_D"></a></span>
+				</div>
+			</div>
+			
+			<div class="text-center">
+				<button class="box-but" id="remake">重置</button>
+			</div>
+		</div>
+		<script type="text/javascript">
+			window.onload = function() {
+				App.address();
+			}
+			document.getElementById("patient").onclick = function() {
+				App.to_patient();
+			}
+			document.getElementById("remake").onclick = function() {
+				App.remake();
+			}
+			document.getElementById("hospital_B").onclick = function() {
+				var url = "hospital-other.html?hospital=2";
+				window.location.href=url;
+			}
+			document.getElementById("hospital_C").onclick = function() {
+				var url = "hospital-other.html?hospital=3";
+				window.location.href=url;
+			}
+
+			document.getElementById("remake").onclick = function() {
+				App.remake();
+			}
+		</script>
+	</body>
+</html>
